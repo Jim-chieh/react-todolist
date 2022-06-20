@@ -1,7 +1,45 @@
-ul li .button {
+
+
+ol .content #button {
   display: none;
 }
 
-ul li:hover .button {
+ol .content:hover {
+  background-color: #ccc;
+}
+
+ol .content:hover #button {
   display: inline;
+}
+
+ol .content #button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+}
+
+ol .content {
+  font-size: 1.5rem;
+  margin: 10px 20px ;
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px solid black;
+  user-select: none;
+}
+
+@media screen and (max-width:768px) {
+
+  ol .content {
+    font-size:2rem;
+    margin: 20px 20px ;
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid black;
+  }
+
+  ol .content #button {
+    display: inline;
+    font-size: 1.3rem;
+  }
 }

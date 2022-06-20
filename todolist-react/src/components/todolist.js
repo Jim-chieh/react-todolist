@@ -1,18 +1,27 @@
+import {React} from 'react'
+import {List ,Button, Container} from 'semantic-ui-react'
+
 import './todolist.css'
 
+function Todolist ({listArray , deleteTodo}) {
 
-function Todolist ({todos}) {
-
-  console.log(todos)
+    function delTodo (index) {
+      deleteTodo(index)
+    }
 
   return (
-    <ul>
-    {todos.map((todo)=>{
-     return (
-       <li key={todo.id}>{todo.task} <button className="button">刪除</button></li>
+
+    <>
+    <Container>
+    <List as='ol'  divided>
+    {listArray.map((item,index)=>{
+      return (
+       <List.Content key={item.id}>{item.task} <Button primary id="button" onClick={()=>delTodo(index)}>刪除</Button></List.Content>
      )
     })}
-   </ul>
+   </List>
+   </Container>
+    </>
   )
 }
 
