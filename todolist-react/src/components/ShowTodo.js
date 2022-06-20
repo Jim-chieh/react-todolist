@@ -1,8 +1,6 @@
-function ShowTodo ({id ,name ,done}) {
+function ShowTodo ({todos, index}) {
   return (
-    <ul>
-      <li>{name}{done ? "done" : "not yet"}</li>
-    </ul>
+    "0.0"
   )
 }
 

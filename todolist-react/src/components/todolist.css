@@ -1,0 +1,7 @@
+ul li .button {
+  display: none;
+}
+
+ul li:hover .button {
+  display: inline;
+}

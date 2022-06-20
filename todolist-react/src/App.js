@@ -6,23 +6,24 @@ import TodoForm from './components/TodoForm'
 
 
 function App (){
-  const [todos, setTodos] = React.useState([
-    {
-      id:"1",name:"abc",done:false
-    },
-    {
-      id:"1",name:"abc",done:false
-    },
-    {
-      id:"1",name:"abc",done:false
+  const [todos, setTodos] = React.useState([])
+
+
+
+
+  let addTodo = (todo)=>{
+    console.log('app',todo)
+    let getLlocalStorage = localStorage.getItem('TodoList')
+    if (getLlocalStorage == null){
+      let listArray = []
+    }else {
+      let listArray = JSON.parse(getLlocalStorage)
     }
-  ])
 
-  function addTodo (todo) {
-    setTodos( todo , ...todos)
-  }
+    setTodos([...todos , todo])
+  }  
 
-  
+
 
   return (
     <>

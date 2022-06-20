@@ -4,24 +4,33 @@ import { Container, Form , } from 'semantic-ui-react';
 
 function TodoForm ({addTodo}) {
 
-  const [todo ,setTodo] = React.useState(
-    { id: "",
-    task: "",
-    completed: false
-  })
+  const [textValue ,setTextValue] = React.useState('')
 
 function  handleInputChange(e) {
-  setTodo({...todo , task:e.target.value})
-  
+ setTextValue(e.target.value)
 }
 
 function handleSubmit () {
 
-  if (todo.task.trim()){
-    addTodo({...todo ,id: nanoid()})
-    setTodo({...todo , task: ""})
+  
+}
+
+function handleAddTodo (e) {
+  const todoObj = {
+    id : nanoid(),
+    task : textValue,
+    compeleted : false
   }
- 
+
+  if (e.keyCode !== 13) return 
+  console.log(textValue)
+  if (textValue.trim() === ""){
+    alert('請輸入事項!')
+    e.target.value = ""
+    return
+  }
+  addTodo(todoObj)
+  e.target.value = ""
 }
 
 
@@ -30,7 +39,7 @@ function handleSubmit () {
   <Container >
     <Form >
       <Form.Group >
-        <Form.Input width={14} type="text" placeholder="Enter Todo" onChange={(e)=>handleInputChange(e)} />
+        <Form.Input width={14} type="text" placeholder="Enter Todo" onChange={(e)=>handleInputChange(e)} onKeyUp={e => handleAddTodo(e)} />
         <Form.Button type='submit' onClick={handleSubmit}>新增</Form.Button>
       </Form.Group>
     </Form>

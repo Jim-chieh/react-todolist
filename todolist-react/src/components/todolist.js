@@ -1,12 +1,18 @@
-import ShowTodo from './ShowTodo'
+import './todolist.css'
 
-function Todolist ({todos,}) {
 
+function Todolist ({todos}) {
+
+  console.log(todos)
 
   return (
-    todos.map((todo)=>{
-      return <ShowTodo  {...todo}/>
-    })
+    <ul>
+    {todos.map((todo)=>{
+     return (
+       <li key={todo.id}>{todo.task} <button className="button">刪除</button></li>
+     )
+    })}
+   </ul>
   )
 }
 
