@@ -36,7 +36,7 @@ function App (){
     setTodos([todos])
   }
 
-  let showNum  = (Num) => {
+  let deleteAll  = (Num) => {
     setTodos([...todos , Num])
   }
    
@@ -49,7 +49,7 @@ function App (){
     </Menu>
     <TodoForm  addTodo={addTodo}/>
     <Todolist listArray={listArray} deleteTodo={deleteTodo}/>
-    <ListFooter showNum={showNum}/>
+    <ListFooter deleteAll={deleteAll}/>
     </>
   )
 }
