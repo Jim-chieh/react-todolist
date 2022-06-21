@@ -67,7 +67,7 @@ function handleSubmit () {
 
   return (
     <div>
-  <Container fluid>
+  <Container >
     <Form >
       <Form.Group >
         <Form.Input id="input" width={14} type="text" placeholder="Enter Todo" onChange={(e)=>handleInputChange(e)} onKeyUp={e => handleAddTodo(e)} />

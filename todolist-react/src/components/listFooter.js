@@ -24,8 +24,8 @@ function ListFooter ({deleteAll}) {
     // showN?um(Length)
 
   return (
-    <Container>
-      <Message id="warpper">
+    <Container id="warpper">
+      <Message id="message">
         <Message.Header id="header" style={{position:"relative"}}>你還有 {listArray.length} 個事項未完成 !
         <Button id="type" style={{position:"absolute" ,right: "0",top:"0",margin:"-7px"}} onClick={()=>deleAll()}>清除全部</Button>
         </Message.Header>
